@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Album JS</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/album.css">
+    
+  </head>
+  <body>
+    <!-- page content -->
+    
+    	<div id="album_wrapper"></div>
+    
+    <!-- javascript -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/album.js"></script>
+    <script src="js/photo_album.js"></script>
+    <script>
+	  	/*$.getJSON('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=776170&api_key=8f7b89ad0400ac3446579611693c61f6&user_id=&jsoncallback=?', function(data) {
+    $.each(data.photoset.photo, function(FlickrPhoto){
+        console.log(FlickrPhoto);
+    });
+});*/
+/*
+function ajax_get_json(){
+    
+    var thumbURL = new XMLHttpRequest();
+    thumbURL.open("GET", "http://api.flickr.com/services/rest/?&format=json&method=flickr.photosets.getPhotos&photoset_id=776170&api_key=8f7b89ad0400ac3446579611693c61f6&jsoncallback=_temp", true);
+    //thumbURL.setRequestHeader("Content-type", "application/javascript", true);
+    thumbURL.onreadystatechange = function() {
+        if(thumbURL.readyState == 4 && thumbURL.status == 200) {
+            var data = thumbURL.responseText.substring(6,thumbURL.responseText.length-1);
+            process(JSON.parse(data));
+        }
+    }
+    thumbURL.send(null);
+    
+}
+
+function process(data) {
+	
+    console.log(data.photoset.id);
+        
+}
+
+ajax_get_json();
+
+*/		
+		fa.init({
+			wrapper : "album_wrapper",
+			key		: "8f7b89ad0400ac3446579611693c61f6",
+			sets	: ["776170", "72157626682710701", "72157627105494426"]
+		});
+    </script>
+  </body>
+</html>
